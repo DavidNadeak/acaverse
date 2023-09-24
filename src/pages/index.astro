@@ -1,0 +1,30 @@
+---
+import MainLayout from "../layouts/Layout.astro";
+import ButtonBox from "../components/ButtonBox.astro";
+import "../styles/css/index.css";
+
+const title = "Login";
+---
+
+<MainLayout title={title}>
+  <div class="container">
+    <img src="/images/login.svg" alt="Login" />
+
+    <h1>{title}</h1>
+
+    <div class="ButtonBox-container">
+      <ButtonBox
+        url="/sign-in-dosen/"
+        text="Dosen"
+        textColor="#FFFFFF"
+        backgroundColor="#5133AB"
+      />
+      <ButtonBox
+        url="/sign-in-mahasiswa/"
+        text="Mahasiswa"
+        textColor="#FFFFFF"
+        backgroundColor="#5133AB"
+      />
+    </div>
+  </div>
+</MainLayout>

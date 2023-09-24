@@ -1,0 +1,35 @@
+---
+const { title, backgroundColor1, backgroundColor2 } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style define:vars={{ backgroundColor1, backgroundColor2 }}>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&family=Righteous&display=swap");
+
+  * {
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(
+      var(--backgroundColor1) 0%,
+      var(--backgroundColor1) 30%,
+      var(--backgroundColor2) 30%,
+      var(--backgroundColor2) 100%
+    );
+  }
+</style>

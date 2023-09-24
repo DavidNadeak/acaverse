@@ -1,0 +1,25 @@
+---
+const { text, textColor, backgroundColor } = Astro.props;
+---
+
+<input type="submit" value={text} />
+
+<style define:vars={{ textColor, backgroundColor }}>
+  input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: var(--textColor);
+    background-color: var(--backgroundColor);
+  }
+
+  input:hover {
+    opacity: 0.9;
+  }
+</style>

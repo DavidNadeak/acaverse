@@ -1,0 +1,23 @@
+---
+import MainLayout from "../layouts/Layout.astro";
+import AksiCepat from "../components/AksiCepat.astro";
+import UserBar from "../components/UserBar.astro";
+import "../styles/css/dashboard.css";
+import DaftarKelas from "../components/DaftarKelas.astro";
+import NavBar from "../components/NavBar.astro";
+
+const title = "Dashboard";
+---
+
+<MainLayout title={title} backgroundColor1="#5133ab" backgroundColor2="#ffffff">
+  <div class="container">
+    <UserBar
+      user="David"
+      textColor="#FB7800"
+      profilePicture="/images/profile_picture.svg"
+    />
+    <AksiCepat />
+    <DaftarKelas />
+    <NavBar />
+  </div>
+</MainLayout>

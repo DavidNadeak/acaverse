@@ -1,0 +1,109 @@
+---
+const {
+  namaKelas,
+  url,
+  deskripsi,
+  dosen,
+  persentase,
+  logoKelas,
+  backgroundKelas,
+} = Astro.props;
+---
+
+<a href={url}>
+  <div class="Kelas">
+    <div class="header">
+      <h3 class="namaKelas">{namaKelas}</h3>
+      <p class="dosen">{dosen}</p>
+    </div>
+    <div class="content">
+      <img src={logoKelas} alt={namaKelas} />
+      <div class="detail">
+        <p class="deskripsi">{deskripsi}</p>
+        <p class="persentase">Completed {persentase}</p>
+        <div class="persentase">
+          <div class="completed"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
+<style define:vars={{ persentase, backgroundKelas }}>
+  .Kelas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: white;
+    background-image: var(--backgroundKelas);
+    background-size: 100% 100%;
+  }
+
+  .Kelas:hover {
+    opacity: 0.8;
+  }
+
+  .namaKelas {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+
+  .dosen {
+    margin-top: 0px;
+    font-size: 8px;
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    width: 99%;
+    border-radius: 10px;
+    color: white;
+    background-size: 100% 100%;
+  }
+
+  img {
+    width: 40%;
+  }
+
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    padding: 10px;
+  }
+
+  .deskripsi {
+    margin-bottom: 0px;
+    font-size: 12px;
+    text-align: justify;
+  }
+
+  p.persentase {
+    width: 100%;
+    margin-bottom: 0px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  div.persentase {
+    width: 100%;
+    height: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  div.completed {
+    width: var(--persentase);
+    height: 100%;
+    border-radius: 10px;
+    background-color: lime;
+  }
+</style>

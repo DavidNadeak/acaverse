@@ -1,0 +1,90 @@
+---
+import Kelas from "./Kelas.astro";
+---
+
+<div class="DaftarKelas">
+  <div class="header">
+    <h2>Daftar Kelas</h2>
+    <a href="#">
+      <p>Lihat Semua</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        viewBox="0 0 32 32"
+        ><path
+          fill="#909090"
+          d="m16 8l-1.43 1.393L20.15 15H8v2h12.15l-5.58 5.573L16 24l8-8l-8-8z"
+        ></path><path
+          fill="#909090"
+          d="M16 30a14 14 0 1 1 14-14a14.016 14.016 0 0 1-14 14Zm0-26a12 12 0 1 0 12 12A12.014 12.014 0 0 0 16 4Z"
+        ></path>
+      </svg>
+    </a>
+  </div>
+  <Kelas
+    namaKelas="Pemograman Web 1"
+    url="#"
+    deskripsi="Membuat kode program untuk situs dan aplikasi di browser"
+    dosen="Rudi Hartono ST, M.Kom"
+    persentase="80%"
+    logoKelas="/images/pemograman_web_1.svg"
+    backgroundKelas="url('/images/background_kelas_1.png')"
+  />
+  <Kelas
+    namaKelas="Dasar Keamanan Komputer"
+    url="#"
+    deskripsi="Melindungi sistem komputer untuk keamanan data"
+    dosen="Ida Nurhaida, Dr, MT"
+    persentase="20%"
+    logoKelas="/images/dasar_keamanan_komputer.svg"
+    backgroundKelas="url('/images/background_kelas_2.png')"
+  />
+</div>
+
+<style>
+  .DaftarKelas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  h2 {
+    font-weight: bold;
+    color: #5133ab;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #909090;
+  }
+
+  a:hover {
+    color: black;
+  }
+
+  a:hover svg path {
+    fill: black;
+  }
+
+  p {
+    margin-right: 3px;
+  }
+
+  svg {
+    width: 20px;
+  }
+</style>

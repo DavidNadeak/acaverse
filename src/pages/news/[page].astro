@@ -1,0 +1,134 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NewsPost from "../../components/NewsPost.astro";
+import NavBar from "../../components/NavBar.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await Astro.glob("../posts/*.md");
+  // Generate pages from our array of astronauts, with 2 to a page
+  return paginate(allPosts, { pageSize: 3 });
+}
+// All paginated data is passed on the "page" prop
+const { page, posts } = Astro.props;
+const title = "News";
+---
+
+<Layout title={title}>
+  <div class="page">
+    <h1>{title}</h1>
+
+    <a href="/tags/" class="tags"># Tags</a>
+
+    <div class="newpost-container">
+      {
+        page.data.map((post) => (
+          <NewsPost
+            url={post.url}
+            title={post.frontmatter.title}
+            img={post.frontmatter.image.url}
+            alt={post.frontmatter.image.alt}
+          />
+        ))
+      }
+    </div>
+
+    <div class="pagination">
+      {
+        page.url.prev ? (
+          <a href={page.url.prev} class="previous-page">
+            Previous{" "}
+          </a>
+        ) : null
+      }
+
+      {
+        page.url.current ? (
+          <a href={page.url.current} class="current-page">
+            {page.currentPage}
+          </a>
+        ) : null
+      }
+
+      {
+        page.url.next ? (
+          <a href={page.url.next} class="next-page">
+            Next
+          </a>
+        ) : null
+      }
+    </div>
+
+    <NavBar />
+  </div>
+</Layout>
+
+<style>
+  * {
+    /* border: 1px solid black; */
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  h1 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #5133ab;
+  }
+
+  .tags {
+    align-self: flex-end;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #5133ab;
+  }
+
+  .tags:hover {
+    background-color: black;
+  }
+
+  .newpost-container {
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 50px;
+  }
+
+  .pagination a {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #5133ab;
+  }
+
+  .pagination a:hover {
+    background-color: black;
+  }
+
+  .pagination a.previous-page {
+    margin-right: 10px;
+  }
+
+  .pagination a.current-page {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .pagination a.next-page {
+    margin-left: 10px;
+  }
+</style>

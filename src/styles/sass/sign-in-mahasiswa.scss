@@ -1,0 +1,80 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+
+    .logo {
+        width: 100%;
+    }
+
+    h1 {
+        margin-right: 150px;
+        color: #5133ab;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .input-password {
+            margin-top: 10px;
+        }
+
+        .forgot-password {
+            width: 100%;
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: right;
+            text-decoration: none;
+            color: #5133ab;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .ButtonBox-container {
+        margin-top: 30px;
+    }
+
+    .pedoman-mahasiswa {
+        display: flex;
+        justify-content: space-between;
+        width: 210px;
+        margin-top: 30px;
+        font-size: 16px;
+        font-weight: bold;
+
+        img {
+            width: 25px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #5133ab;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .customer-service {
+        margin-top: 70px;
+        font-size: 15px;
+        font-weight: bold;
+
+        a {
+            text-decoration: none;
+            color: #5133ab;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.container .logo {
+  width: 100%;
+}
+.container h1 {
+  margin-right: 150px;
+  color: #5133ab;
+}
+.container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container form .input-password {
+  margin-top: 10px;
+}
+.container form .forgot-password {
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+  text-decoration: none;
+  color: #5133ab;
+}
+.container form .forgot-password:hover {
+  text-decoration: underline;
+}
+.container .ButtonBox-container {
+  margin-top: 30px;
+}
+.container .pedoman-mahasiswa {
+  display: flex;
+  justify-content: space-between;
+  width: 210px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.container .pedoman-mahasiswa img {
+  width: 25px;
+}
+.container .pedoman-mahasiswa a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #5133ab;
+}
+.container .pedoman-mahasiswa a:hover {
+  text-decoration: underline;
+}
+.container .customer-service {
+  margin-top: 70px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.container .customer-service a {
+  text-decoration: none;
+  color: #5133ab;
+}

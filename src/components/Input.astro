@@ -1,0 +1,42 @@
+---
+const { type, name, icon, placeholder, textColor, backgroundColor } =
+  Astro.props;
+---
+
+<div class="Input">
+  <img src={icon} alt="Student ID" />
+  <input type={type} name={name} placeholder={placeholder} required />
+</div>
+
+<style define:vars={{ icon, textColor, backgroundColor }}>
+  .Input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    border: 1px solid var(--textColor);
+    border-radius: 10px;
+  }
+
+  img {
+    width: 20px;
+    margin: 10px;
+  }
+
+  input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    color: var(--textColor);
+    background-color: var(--backgroundColor);
+  }
+
+  input:focus {
+    outline: none;
+  }
+</style>

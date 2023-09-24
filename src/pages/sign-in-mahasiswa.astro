@@ -1,0 +1,56 @@
+---
+import MainLayout from "../layouts/Layout.astro";
+import Input from "../components/Input.astro";
+import InputPassword from "../components/InputPassword.astro";
+import InputSubmit from "../components/InputSubmit.astro";
+import "../styles/css/sign-in-mahasiswa.css";
+
+const title = "Sign In";
+---
+
+<MainLayout title={title}>
+  <div class="container">
+    <img
+      src="/images/sign_in_mahasiswa.svg"
+      alt="Sign In Mahasiswa"
+      class="logo"
+    />
+
+    <h1>{title}</h1>
+
+    <form action="/dashboard/">
+      <Input
+        type="text"
+        name="student_id"
+        icon="/icons/student_id.svg"
+        placeholder="Student ID"
+        textColor="#5133AB"
+        backgroundColor="#FFFFFF"
+      />
+      <InputPassword
+        name="password"
+        icon="/icons/password.svg"
+        placeholder="Password"
+        textColor="#5133AB"
+        backgroundColor="#FFFFFF"
+      />
+
+      <a href="#" class="forgot-password">Forgot Password?</a>
+
+      <InputSubmit
+        text="Sign In"
+        textColor="#FFFFFF"
+        backgroundColor="#5133AB"
+      />
+    </form>
+
+    <div class="pedoman-mahasiswa">
+      <img src="/icons/pedoman_mahasiswa.svg" alt="Pedoman Mahasiswa" />
+      <a href="#">Pedoman Mahasiswa</a>
+    </div>
+
+    <p class="customer-service">
+      Terjadi masalah? Hubungi <a href="#">kontak ini</a>
+    </p>
+  </div>
+</MainLayout>

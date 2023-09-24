@@ -1,0 +1,43 @@
+---
+import ButtonRound from "./ButtonRound.astro";
+---
+
+<div class="AksiCepat">
+  <h3>Aksi Cepat</h3>
+  <div class="ButtonRound-container">
+    <ButtonRound url="#" src="/icons/jadwal.svg" text="Jadwal" />
+    <ButtonRound url="#" src="/icons/skp.svg" text="SKP" />
+    <ButtonRound url="#" src="/icons/krs-khs.svg" text="KRS/KHS" />
+    <ButtonRound url="#" src="/icons/presensi.svg" text="Presensi" />
+    <ButtonRound url="#" src="/icons/e-learning.svg" text="E-Learning" />
+    <ButtonRound url="#" src="/icons/nilai.svg" text="Nilai" />
+    <ButtonRound url="#" src="/icons/tagihan.svg" text="Tagihan" />
+    <ButtonRound url="#" src="/icons/lainnya.svg" text="Lainnya" />
+  </div>
+</div>
+
+<style>
+  .AksiCepat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 5px 5px grey;
+  }
+
+  h3 {
+    margin-right: 200px;
+    color: #5133ab;
+  }
+
+  .ButtonRound-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 3px;
+    width: 100%;
+  }
+</style>
